@@ -1,0 +1,18 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>Formation</span>
+    <button mat-button class="logout-button" (click)="fazerLogout()"><mat-icon>logout</mat-icon> Sair</button>
+
+  </mat-toolbar-row>
+
+</mat-toolbar>
+
+<nav mat-tab-nav-bar *ngIf="loginData != null">
+  <a mat-tab-link *ngFor="let page of navPages" [routerLink]="page.link" routerLinkActive #rla="routerLinkActive" [active]="rla.isActive">
+  {{ page.label }}
+  </a>
+</nav>
+
+<router-outlet *ngIf="loginData != null"></router-outlet>
+
+<app-login *ngIf="loginData == null"></app-login>
