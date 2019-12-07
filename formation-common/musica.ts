@@ -1,17 +1,23 @@
+import { Usuario } from './usuario';
+
 export class Musica {
     titulo: string;
     artista: string;
     integrantes: String [];
+    usuariosInteressados: Usuario[];
   
     constructor() {
-      this.clean();
+      this.titulo = "";
+      this.artista = "";
+      this.integrantes = [];
+      this.usuariosInteressados = [];
     }
-  
+
     clean(): void {
       this.titulo = "";
       this.artista = "";
       this.integrantes = [];
-
+      this.usuariosInteressados = [];
     }
   
     clone(): Musica {
@@ -24,6 +30,7 @@ export class Musica {
       this.titulo = from.titulo;
       this.artista = from.artista;
       this.integrantes = from.integrantes;
+      this.usuariosInteressados = from.usuariosInteressados;
     }
 
   }
