@@ -14,11 +14,14 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {MatCardModule} from '@angular/material/card'
 import { HomeComponent } from './home/home.component';
 import { MensagensComponent } from './mensagens/mensagens.component';
 import { AdministradorComponent } from './administrador/administrador.component';
 import { LoginComponent } from './login/login.component';
 import { UsuarioService } from './usuario.service';
+import { MusicasService } from './musica/musica.service';
+import { FormacaoService } from './formacao/formacao.service';
 import { HttpClientModule } from '@angular/common/http';
 import { MusicaComponent } from './musica/musica.component';
 import { FormacaoComponent } from './formacao/formacao.component';
@@ -48,9 +51,10 @@ import { FormacaoComponent } from './formacao/formacao.component';
     MatButtonModule,
     MatSnackBarModule,
     MatIconModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatCardModule
   ],
-  providers: [UsuarioService],
+  providers: [UsuarioService, MusicasService, FormacaoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
