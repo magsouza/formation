@@ -42,8 +42,9 @@ export class MensagensComponent implements OnInit {
   confirmarFormacao() {
     const usuario = this.usuarios.find(usuario => usuario.cpf === localStorage.getItem('loginCpf'));
     usuario.participacoes = usuario.participacoes + 1;
-    this.usuarioService.atualizar(usuario);
-    const snackBar = this.snackBar.open('Confirmação realizada com sucesso!', 'OK');
+    this.usuarioService.atualizar(usuario).subscribe(
+      (a) => { if (a !== null) this.snackBar.open('Confirmação realizada com sucesso!', 'OK'); }
+    );
   }
 
   cancelarFormacao() {
